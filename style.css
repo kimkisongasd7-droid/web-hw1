@@ -6,8 +6,9 @@
     --warn: #ff5a5f;
     --font-title: "Black Han Sans", sans-serif;
     --font-body: "Noto Sans KR", sans-serif;
-    --gap: 20px;    
+    --gap: 20px;
 }
+
 body {
     background: var(--bg);
     min-height: 100vh;
@@ -17,7 +18,7 @@ body {
     font-family: var(--font-body);
     color: var(--text);
 
-  
+
 
     h1,
     footer {
@@ -26,20 +27,31 @@ body {
 }
 
 .rank {
-    position: absolute; top: 12px; left: 12px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--warn);
+    position: absolute;
+    color: var(--bg);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: bold;
 }
-.change.up::before { 
-    content: "▲"; 
+
+.change.up::before {
+    content: "▲";
     color: var(--warn);
 }
-.change.down::before { 
-    content:"▼";
+
+.change.down::before {
+    content: "▼";
     color: var(--accent);
-} 
-.change.new::before { 
+}
+
+.change.new::before {
     content: "NEW";
     color: var(--warn);
- }
+}
 
 .card {
     border-radius: 12px;
@@ -111,14 +123,14 @@ nav a {
 
 .hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url("https://image.tmdb.org/t/p/w1280/5jnoAA74Qwb5w6B9FMvnc20n6Ie.jpg_backdrop_path");
+        url("https://image.tmdb.org/t/p/w1280/gDN2NWtHbs8ZWEBQM8Dh5OVXdb4.jpg");
 
     background-size: cover;
     background-position: center;
     min-height: 40vh;
     padding: 24px;
     box-sizing: border-box;
-    color: #fff;
+    color: var(--text);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -136,13 +148,23 @@ footer {
 }
 
 
+.detail-page {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("https://image.tmdb.org/t/p/w1280/gDN2NWtHbs8ZWEBQM8Dh5OVXdb4.jpg");
+    background-size: cover;
+    min-height: 100vh;
+}
 
 
 
+.detail {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+}
 
-
-
-
+.dt {
+    color: var(--accent);
+}
 
 
 
@@ -151,8 +173,17 @@ footer {
         flex-direction: row;
         gap: 20px;
     }
+
     .bord {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .detail img {
+        width: 100%;
     }
 }
 
@@ -164,6 +195,7 @@ footer {
     .hero h2 {
         font-size: 3rem;
     }
+
     .bord {
         grid-template-columns: repeat(4, 1fr);
     }
